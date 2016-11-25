@@ -1,0 +1,35 @@
+﻿@using UniversityCourseAndResultManagementSystemApp.Models
+
+@{
+    ViewBag.Title = "ViewAllDepartment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Department> departmentList = ViewBag.DepartmentList;
+}
+
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>View All Department</legend>
+
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var department in departmentList)
+                {
+                    <tr>
+                        <td>@department.Code</td>
+                        <td>@department.Name</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </fieldset>
+}
